@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estúdio de Dança - Professora Gabryella</title>
+  
+  <!-- Fonte Google: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-purple: #8A2BE2; /* Roxo principal */
+      --dark-purple: #4C1D95;
+      --light-purple: #A78BFA;
+      --shadow-blue: #3B82F6;   /* Azul para sombras e destaques */
+      --glow-blue: rgba(59, 130, 246, 0.5);
+      --bg-dark: #0F0C20;
+      --card-bg: #1A1633;
+      --text-color: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --whatsapp-green: #25D366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* --- HERO / HEADER SECTION --- */
+    header {
+      background: linear-gradient(135deg, var(--dark-purple) 0%, var(--bg-dark) 100%);
+      padding: 60px 0 40px;
+      text-align: center;
+      border-bottom: 2px solid var(--primary-purple);
+      box-shadow: 0 10px 30px var(--glow-blue);
+    }
+
+    .badge-kpop {
+      background: linear-gradient(90deg, var(--primary-purple), var(--shadow-blue));
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px var(--shadow-blue);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #fff, var(--light-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    /* --- SOBRE MIM --- */
+    .about-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid rgba(138, 43, 226, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.25);
+      position: relative;
+    }
+
+    .about-card h2 {
+      color: var(--light-purple);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-card p {
+      font-size: 1.1rem;
+      color: #E5E7EB;
+      margin-bottom: 25px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, var(--primary-purple), #6D28D9);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px var(--glow-blue);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(59, 130, 246, 0.8);
+      background: linear-gradient(90deg, #9333EA, var(--shadow-blue));
+    }
+
+    /* --- FORMULÁRIO DE INFORMAÇÕES DO ALUNO --- */
+    .form-section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 50px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      box-shadow: 0 10px 30px -5px rgba(138, 43, 226, 0.3);
+    }
+
+    .form-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--light-purple);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background-color: #0F0C20;
+      border: 1px solid rgba(138, 43, 226, 0.4);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--shadow-blue);
+      box-shadow: 0 0 10px var(--shadow-blue);
+    }
+
+    /* --- BALÃO DE FALA & BOTÃO WHATSAPP --- */
+    .whatsapp-btn-wrapper {
+      margin-top: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .speech-bubble {
+      position: relative;
+      background: var(--shadow-blue);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0;
+      border-style: solid;
+      border-color: var(--shadow-blue) transparent;
+      display: block;
+      width: 0;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      background-color: var(--whatsapp-green);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1eb956;
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    }
+
+    /* --- CONTATO E LOCALIZAÇÃO --- */
+    .contact-section {
+      background: linear-gradient(180deg, var(--card-bg) 0%, #0F0C20 100%);
+      border-top: 1px solid var(--primary-purple);
+      padding: 50px 0;
+      margin-top: 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: rgba(26, 22, 51, 0.8);
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid var(--shadow-blue);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card h3 {
+      color: var(--light-purple);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-card p {
+      color: #D1D5DB;
+      font-size: 1.05rem;
+    }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 768px) {
+      .form-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      h1 {
+        font-size: 2.1rem;
+      }
+      .about-card {
+        padding: 25px;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <div class="container">
+      <span class="badge-kpop"><i class="fa-solid fa-compact-disc"></i> Especialista em K-POP</span>
+      <h1>Estúdio de Dança</h1>
+      <p class="subtitle">Professora Gabryella</p>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- SOBRE MIM SECTION -->
+    <section class="about-card">
+      <h2><i class="fa-solid fa-star"></i> Sobre mim</h2>
+      <p>
+        Muito prazer, sou a Gabryella! São 18 anos de idade e 12 anos de imersão total no mundo do K-pop. Minha jornada na dança me trouxe até um dos maiores grupos cover de Goiânia. Agora, quero dividir toda essa experiência, técnica e energia com você para transformarmos cada passo em pura arte!
+      </p>
+      <a href="#form-section" class="btn-cta">
+        Solicitar atendimento <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section id="form-section" class="form-section">
+      <h2><i class="fa-solid fa-user-plus"></i> Informações do Aluno</h2>
+      
+      <form id="danceForm">
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cpf">CPF *</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone / WhatsApp *</label>
+            <input type="tel" id="telefone" placeholder="(62) 99999-9999" maxlength="15" required />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="idade">Idade *</label>
+            <input type="number" id="idade" min="1" max="120" placeholder="Ex: 18" required />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="descricao">Objetivo</label>
+            <textarea id="descricao" rows="4" placeholder="Descreva nesse campo qual o seu objetivo, ex: Kpop, balé, samba..."></textarea>
+          </div>
+
+        </div>
+
+        <!-- BALÃO DE FALA & BOTÃO -->
+        <div class="whatsapp-btn-wrapper">
+          <div class="speech-bubble">
+            <i class="fa-solid fa-comment"></i> Clique para enviar seus dados direto no meu WhatsApp!
+          </div>
+          <button type="submit" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- CONTATO & LOCALIZAÇÃO -->
+  <footer class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <div class="contact-card">
+          <h3><i class="fa-solid fa-phone"></i> Contato</h3>
+          <p><strong>WhatsApp:</strong> +55 62 9199-4113</p>
+        </div>
+
+        <div class="contact-card">
+          <h3><i class="fa-solid fa-location-dot"></i> Localização</h3>
+          <p>R. 1029, 190 - St. Pedro Ludovico</p>
+          <p>Goiânia - GO, 74823-140</p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT INTELIGENTE -->
+  <script>
+    // --- MÁSCARA AUTOMÁTICA DE CPF ---
+    const cpfInput = document.getElementById('cpf');
+    cpfInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d)/, '$1.$2');
+      value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      e.target.value = value;
+    });
+
+    // --- MÁSCARA AUTOMÁTICA DE TELEFONE ---
+    const phoneInput = document.getElementById('telefone');
+    phoneInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      if (value.length > 10) {
+        value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else {
+        value = value.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
+      }
+      e.target.value = value;
+    });
+
+    // --- PROCESSAMENTO DO FORMULÁRIO E REDIRECIONAMENTO WHATSAPP ---
+    const form = document.getElementById('danceForm');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Impede o reload da página
+
+      // Captura de dados
+      const nome = document.getElementById('nome').value.trim();
+      const cpf = document.getElementById('cpf').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const idade = document.getElementById('idade').value.trim();
+      const descricao = document.getElementById('descricao').value.trim() || 'Não informado';
+
+      // Número de destino (Professora Gabryella)
+      const targetPhone = '556291994113';
+
+      // Montagem da mensagem formatada
+      const message = 
+`✨ *Novo Contato pelo Site - Estúdio de Dança* ✨
+
+👤 *Nome:* ${nome}
+📄 *CPF:* ${cpf}
+📧 *E-mail:* ${email}
+📱 *Telefone/WhatsApp:* ${telefone}
+🎂 *Idade:* ${idade} anos
+🎯 *Objetivo:* ${descricao}`;
+
+      // Encode para URL do WhatsApp
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedMessage}`;
+
+      // Abre o WhatsApp em uma nova aba
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
